@@ -34,17 +34,17 @@ class db {
         return this.connection.query("SELECT roles.id, roles.title, roles.salary, departments.name AS department FROM roles INNER JOIN departments ON roles.department_id = departments.id");
     }
 
-    addRole(addRole) {
+    addRoles(addRoles) {
         return this.connection.query("INSERT INTO roles SET ?",
         {
-            title: addRole.title,
-            salary: addRole.salary,
-            department_id: addRole.department_id,
+            title: addRoles.title,
+            salary: addRoles.salary,
+            department_id: addRoles.department_id,
         });
     }
 
-    deleteRole(deleteRole) {
-        return this.connection.query("DELETE FROM roles WHERE id=?", [deleteRole]);
+    deleteRoles(deleteRoles) {
+        return this.connection.query("DELETE FROM roles WHERE id=?", [deleteRoles]);
     }
 
     getEmployees() {
@@ -59,7 +59,7 @@ class db {
             {
                 first_name: addEmp.first_name,
                 last_name: addEmp.last_name,
-                role_id: addEmp.role_id,
+                roles_id: addEmp.roles_id,
                 manager_id: addEmp.manager_id
             });
     }
@@ -82,16 +82,14 @@ class db {
 
     updateEmpRoles(joinQ) {
         return this.connection.query("UPDATE employees SET ? WHERE ?" [{
-            role_id: joinQ.updateRoleID
+            roles_id: joinQ.updateRolesID
         },
         {
             id: joinQ.updateID
         }]);
     }
-
     deleteEmployee(deleteEmp) {
         return this.connection.query("DELETE FROM employees WHERE id=?" [deleteEmp]);
     }
-    
 }
 module.exports = new db(connection);
