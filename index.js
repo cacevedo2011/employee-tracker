@@ -1,8 +1,23 @@
-const db = require('./db/database.js');
-const connection = require('./db/connection.js')
-
 const express = require('express');
 const inquirer = require('inquirer');
+
+
+//Files Needed
+const Db = require('./db/database');
+const connection = require('./db/connection');
+
+
+//Importing Files
+const ask = require('inquirer');
+const util = require('util');
+const validator = require('validator');
+const cfonts = require('cfonts');
+const { printTable } = require("console-table-printer");
+const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require('constants');
+const os = require('os');
+const { beginTransaction } = require('./db/connection');
+
+connection.query = util.promisify(connection.query);
 
 //Connection
 connection.connect(function (err) {

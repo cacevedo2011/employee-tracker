@@ -4,23 +4,27 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cfonts": "^2.8.6",
+    "console-table-printer": "^2.4.28",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "inquirer": "^7.3.3",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "util": "^0.12.3",
+    "validator": "^13.1.17"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "mySql": "mysql -u root -p"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cacevedo2011/employee-tracker.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Cristian Acevedo",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cacevedo2011/employee-tracker/issues"
   },

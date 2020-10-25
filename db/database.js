@@ -1,4 +1,4 @@
-const connection = require('./connect');
+const connection = require('./connection');
 
 class db {
 
@@ -23,7 +23,7 @@ class db {
     }
 
     viewDeptBudget(budget) {
-        return this.connection.query("SELECT departments.id, roles.id AS role_id, roles.salary, employees.last_name FROM departments INNER JOIN roles ON roles.department_id = departments.id INNER JOIN employees ON employees.role_id = roles.id WHERE departments.id=?", [budget])
+        return this.connection.query("SELECT departments.id, roles.id AS role_id, roles.salary, employees.last_name FROM departments INNER JOIN roles ON roles.department_id = departments.id INNER JOIN employees ON employees.roles_id = roles.id WHERE departments.id=?", [budget])
     }
 
     getRoles() {
@@ -51,7 +51,7 @@ class db {
         return this.connection.query("SELECT * FROM employees");
     }
     getEmpsWithRoles() {
-        return this.connection.query("SELECT employees.id, employees.first_name, employees.last_name, roles.title, manager_id FROM employees INNER JOIN roles ON employees.role_id = roles.id");
+        return this.connection.query("SELECT employees.id, employees.first_name, employees.last_name, roles.title, manager_id FROM employees INNER JOIN roles ON employees.roles_id = roles.id");
     }
 
     addEmployee(addEmp) {
