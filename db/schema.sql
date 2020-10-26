@@ -3,9 +3,9 @@ CREATE DATABASE employee_tracker;
 
 USE employee_tracker;
 
-CREATE TABLE departments (
+CREATE TABLE department (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  d_name VARCHAR(30) UNIQUE NOT NULL
+  name VARCHAR(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE roles (
@@ -22,6 +22,6 @@ CREATE TABLE employees (
     last_name VARCHAR(30) NOT NULL,
     roles_id INT NOT NULL,
     manager_id INT,
-    CONSTRAINT fk_roles FOREIGN KEY(roles_id) REFERENCES roles(id) ON DELETE CASCADE,
+    CONSTRAINT  FOREIGN KEY(roles_id) REFERENCES roles(id) ON DELETE CASCADE,
     CONSTRAINT fk_mngr FOREIGN KEY(manager_id) REFERENCES employees(id) ON DELETE CASCADE
 );

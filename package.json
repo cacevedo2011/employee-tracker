@@ -1,23 +1,29 @@
 {
   "name": "employee-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "A command-line application to manage a comany's employee database",
   "main": "index.js",
   "dependencies": {
     "cfonts": "^2.8.6",
     "console-table-printer": "^2.4.28",
+    "console.table": "^0.10.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "inquirer": "^7.3.3",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
+    "os": "^0.1.1",
+    "rxjs": "^6.6.3",
     "sqlite3": "^5.0.0",
     "util": "^0.12.3",
     "validator": "^13.1.17"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^26.6.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
