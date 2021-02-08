@@ -1,3 +1,5 @@
+// This part of the code I got help from Damaris Campos and Michael Giddings
+
 const connection = require('./connection');
 
 class db {
@@ -7,6 +9,9 @@ class db {
     getDepartments() {
         return this.connection.query("SELECT * FROM department");
     }
+    // Michael Giddings help me in this part of the code and me and Damaris Campos took some of the inspiration of what
+    // Michael said and made our own style.
+    
     addDepartments(department) {
         return this.connection.query(
             "INSERT INTO department SET ?",
