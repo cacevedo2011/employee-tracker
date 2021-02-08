@@ -265,7 +265,7 @@ const inquireQ = () => {
                     break;
 
                 case "Delete Employees":
-                    const empDel = await getEmployees();
+                    const empDel = await Db.getEmployees();
                     const { deleteEmp } = await ask.prompt([
                     {
                         type: "list",
